@@ -345,3 +345,135 @@ yearsUntilRetirement(1990, 'John');
 yearsUntilRetirement(1948, 'Mike');
 yearsUntilRetirement(1969, 'Jane');
 */
+
+
+/*****************************
+* Function Statemetns and Expressions
+
+
+// Function declaration
+// function whatDoYouDo() {}
+
+// Function expression
+var whatDoYouDo = funciton(job, fistName) {
+    switch(job) {
+        case 'teacher':
+            return firstName + ' teaches kids how to code';
+        case 'driver':
+            return firstName + ' drives a cap in lisbon.';
+        case 'designer':
+            return firstName + ' designs beautiful websites.';
+        default:
+            return firstName + ' does something else';
+    }
+}
+
+console.log(whatDoYouDo('teacher', 'John'));
+console.log(whatDoYouDo('driver', 'Mark'));
+console.log(whatDoYouDo('designer', 'Jane'));
+*/
+
+/*****************************
+* Arrays
+
+// Initialize new array
+var names = ['John', 'Mark', 'Jane'];
+var years = new Array(1990, 1969, 1948);
+
+console.log(names[2]);
+console.log(names.length);
+
+// Mutate array data
+names[1] = 'Ben';
+names[names.length] = 'Mary';
+console.log(names);
+
+// Different data types
+var john = ['John', 'Smith', 1990, 'teacher', false];
+
+john.push('blue');
+john.unshift('Mr.');
+console.log(john);
+
+john.pop();
+john.pop();
+john.shift();
+console.log(john);
+
+console.log(john.indexOf(1990));
+
+var isDesigner = john.indexOf('designer') === -1 ? 'John is not a designer' : 'John is a designer';
+console.log(isDesigner);
+*/
+
+/*****************************
+* CODING CHALLENGE 3
+*/
+
+/*
+John and his family went on a holiday and went to 3 different restaurants. The bills were $124, $48 and $268.
+
+To tip the waiter a fair amount, John created a simple tip calculator (as a function).
+He likes to tip 20% of the bill when the bill is less than $50, 15% when the bill is between $50 and $200, and 10% if the bill is more than $200.
+
+In the end, John would like to have 2 arrays:
+1) Containing all three tips (one for each bill)
+2) Containing all three final paid amounts (bill + tip).
+
+(NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
+
+GOOD LUCK 😀
+
+
+// Marcs way
+var tips = [20, 15, 10]; // soll fix sein werte direkt in die funktion schreiben
+
+var tipCalc = function(bill) { // wird jedes mal returnt, sauberer mit if else und variablen mutation
+    switch(true) {
+        case bill < 50:
+            return bill * tips[0]/100;
+        case bill >= 50 && bill <= 200:
+            return bill * tips[1]/100;
+        default:
+            return bill * tips[2]/100;
+    }
+}
+
+var bills = [124, 48, 268];
+var paidTip = [tipCalc(bills[0]),
+                tipCalc(bills[1]),
+                tipCalc(bills[2])];
+
+var finalPaid = [bills[0] + paidTip[0],
+                 bills[1] + paidTip[1],
+                 bills[2] + paidTip[2]];
+
+console.log(paidTip);
+console.log(finalPaid);
+
+
+// Teachers way
+function tipCalculator(bill) {
+    var percentage;
+    if (bill < 50) {
+        percentage = 20/100;
+    } else if (bill >= 50 && bill < 200) {
+        percentage = 15/100;
+    } else {
+        percentage = 10/100;
+    }
+    return percentage * bill;
+}
+
+var bills = [124, 48, 268];
+var tips = [tipCalculator(bills[0]),
+            tipCalculator(bills[1]),
+            tipCalculator(bills[2])];
+
+var finalValues = [bills[0] + tips[0],
+                   bills[1] + tips[1],
+                   bills[2] + tips[2]];
+
+console.log(tips);
+console.log(finalValues);
+*/
