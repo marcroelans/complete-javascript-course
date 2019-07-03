@@ -377,7 +377,7 @@ console.log(whatDoYouDo('designer', 'Jane'));
 * Arrays
 
 // Initialize new array
-var names = ['John', 'Mark', 'Jane'];
+var names = ['John', '', 'Jane'];
 var years = new Array(1990, 1969, 1948);
 
 console.log(names[2]);
@@ -477,3 +477,152 @@ var finalValues = [bills[0] + tips[0],
 console.log(tips);
 console.log(finalValues);
 */
+
+/*****************************
+* Objects and properties
+*/
+/*
+// Object literal
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', '', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false
+};
+
+console.log(john.firstName);
+console.log(john['lastName']);
+var x = 'birthYear';
+console.log(john[x]);
+
+john.job = 'designer';
+john['isMarried'] = true;
+console.log(john);
+
+// new Object syntax
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1969;
+jane['lastName'] = 'Smith';
+console.log(jane);
+*/
+
+
+/*****************************
+* Objects and Mehtods
+
+// Object literal
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1990,
+    family: ['Jane', '', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+    calcAge: function() {
+        this.age = 2018 - this.birthYear;
+    }
+};
+
+john.calcAge();
+console.log(john);
+*/
+
+/*****************************
+* CODING CHALLENGE 4
+*/
+
+/*
+Let's remember the first coding challenge where  and John compared their BMIs. Let's now implement the same functionality with objects and methods.
+1. For each of them, create an object with properties for their full name, mass, and height
+2. Then, add a method to each object to calculate the BMI. Save the BMI to the object and also return it from the method.
+3. In the end, log to the console who has the highest BMI, together with the full name and the respective BMI. Don't forget they might have the same BMI.
+
+Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
+
+GOOD LUCK 😀
+*/
+/*
+var John = {
+  fullName: 'John Smith',
+  mass: 110,
+  height: 1.95,
+  calcBMI: function() {
+    this.BMI = this.mass / (this.height * this.height);
+    return this.BMI;
+  }
+}
+
+var Mark = {
+  fullName: 'Mark Miller',
+  mass: 90,
+  height: 1.86,
+  calcBMI: function() {
+    this.BMI = this.mass / (this.height * this.height);
+    return this.BMI;
+  }
+}
+John.calcBMI();
+Mark.calcBMI();
+
+if (John.BMI > Mark.BMI) {
+    console.log(John.fullName + ' has a higher BMI of ' + John.BMI);
+} else if (Mark.BMI > John.BMI) {
+    console.log(Mark.fullName + ' has a higher BMI of ' + Mark.BMI);
+} else {
+  console.log('They have the same BMI');
+}
+*/
+
+/*****************************
+* loops and iteration
+*/
+
+/*
+// for loop
+for (i = 1; i <= 20; i++) {
+  console.log(i);
+}
+
+// i = 0, 0 < 10 true, log i to console, i++
+// i = 1, 1 < 10 ture, log i to the console, i++
+//...
+// i = 9, 9 < 10 ture, log i to the console, i++
+// i = 10, 10 < 10 false, exit the loop!
+
+var john = ['John', 'Smith', 1990, 'designer', false]
+
+for (i = 0; i < john.length; i++) {
+  console.log(john[i]);
+}
+
+
+// while loop
+var i = 0;
+while (i < john.length) {
+  console.log(john[i]);
+  i++;
+}
+*/
+
+// continue and break statements
+var john = ['John', 'Smith', 1990, 'designer', false, 'blue']
+
+for (i = 0; i < john.length; i++) {
+  if (typeof john[i] !== 'string') continue;
+  console.log(john[i]);
+}
+
+for (i = 0; i < john.length; i++) {
+  if (typeof john[i] !== 'string') break;
+  console.log(john[i]);
+}
+
+
+// loop backwards 
+for (i = john.length; i >= 0; i--) {
+  if (typeof john[i] !== 'string') continue;
+  console.log(john[i]);
+}
